@@ -87,6 +87,7 @@
 <meta property="og:site_name" content="Welcome To Feridy Blog">
 <meta property="og:description" content="本篇文章我主要将我如何搭建这个博客的经验进行分享，我将从头到尾来进行详细的介绍如何利用HEXO+next+github来搭建博客，我在搭建过程中也遇到了一些问题，我也将进行讲解。 安装hexo在安装hexo之前要先安装node.js和Git。 安装完Git后打开Gitbase程序，然后创建博客的根目录：    12CD D:mkdir myblog">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/hexo-icon.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/blog-file-init.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/blog-start.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/download-next.png">
@@ -97,11 +98,20 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/settings.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/ssh-key.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/config.png">
-<meta property="og:updated_time" content="2018-08-05T07:57:39.002Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/deploy.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/feridy.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/setting-config.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/scheme.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/menus.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/tags.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/scaffolds.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/articles.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/05/hexo-blog/blog-article.png">
+<meta property="og:updated_time" content="2018-08-05T14:36:21.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用hexo + next + github搭建这人博客">
 <meta name="twitter:description" content="本篇文章我主要将我如何搭建这个博客的经验进行分享，我将从头到尾来进行详细的介绍如何利用HEXO+next+github来搭建博客，我在搭建过程中也遇到了一些问题，我也将进行讲解。 安装hexo在安装hexo之前要先安装node.js和Git。 安装完Git后打开Gitbase程序，然后创建博客的根目录：    12CD D:mkdir myblog">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/05/hexo-blog/blog-file-init.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/05/hexo-blog/hexo-icon.jpg">
 
 
 
@@ -309,7 +319,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Feridy">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -404,7 +414,8 @@
       
 
       
-        <p>本篇文章我主要将我如何搭建这个博客的经验进行分享，我将从头到尾来进行详细的介绍如何利用<code>HEXO</code>+<code>next</code>+<code>github</code>来搭建博客，我在搭建过程中也遇到了一些问题，我也将进行讲解。</p>
+        <img src="/2018/08/05/hexo-blog/hexo-icon.jpg">
+<p>本篇文章我主要将我如何搭建这个博客的经验进行分享，我将从头到尾来进行详细的介绍如何利用<code>HEXO</code>+<code>next</code>+<code>github</code>来搭建博客，我在搭建过程中也遇到了一些问题，我也将进行讲解。</p>
 <h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装<a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a></h1><p>在安装hexo之前要先安装<a href="https://nodejs.org/" target="_blank" rel="noopener"><code>node.js</code></a>和<a href="https://git-scm.com/" target="_blank" rel="noopener"><code>Git</code></a>。</p>
 <p>安装完Git后打开Gitbase程序，然后创建博客的根目录：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CD D:</span><br><span class="line">mkdir myblog</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
@@ -473,7 +484,40 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-
+<img src="/2018/08/05/hexo-blog/deploy.png">
+<ul>
+<li><p>检查github是否成功</p>
+<p>  查看yourusername.github.io这个库是否存在相关的文件夹，然    后在浏览器中输入<code>https://yourgithubname.github.io</code>来看  看是否能成功显示博客</p>
+<img src="/2018/08/05/hexo-blog/feridy.png">
+</li>
+</ul>
+<h1 id="接下来进行相关配置-注意冒号后边一定要跟一个半角的空格"><a href="#接下来进行相关配置-注意冒号后边一定要跟一个半角的空格" class="headerlink" title="接下来进行相关配置(注意冒号后边一定要跟一个半角的空格)"></a>接下来进行相关配置(注意冒号后边一定要跟一个半角的空格)</h1><h2 id="首先对博客根目录下的-config-yml配置文件进行配置"><a href="#首先对博客根目录下的-config-yml配置文件进行配置" class="headerlink" title="首先对博客根目录下的_config.yml配置文件进行配置"></a>首先对博客根目录下的_config.yml配置文件进行配置</h2><img src="/2018/08/05/hexo-blog/setting-config.png">
+<p>修改title、author、description、将language设置为zh-Hans</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br><span class="line">new_poat_name: :year-:moth-:day-:title.md # 文件的名字为创建日期+文件标题的格式创建文件</span><br><span class="line">post_asset_folder: true # 在创建文章的同时，创建保存图片的文件夹</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="对博客themes主题文件夹next文件夹下的-config-yml配置文件进行配置"><a href="#对博客themes主题文件夹next文件夹下的-config-yml配置文件进行配置" class="headerlink" title="对博客themes主题文件夹next文件夹下的_config.yml配置文件进行配置"></a>对博客themes主题文件夹next文件夹下的_config.yml配置文件进行配置</h2><h3 id="选择Scheme"><a href="#选择Scheme" class="headerlink" title="选择Scheme"></a>选择Scheme</h3><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<ul>
+<li><p>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</p>
+</li>
+<li><p>Mist - Muse 的紧凑版本，整洁有序的单栏外观</p>
+</li>
+<li><p>Pisces - 双栏 Scheme，小家碧玉似的清新</p>
+</li>
+</ul>
+<img src="/2018/08/05/hexo-blog/scheme.png">
+<h3 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h3><p>设置菜单和菜单图标，对应的中文翻译</p>
+<img src="/2018/08/05/hexo-blog/menus.png">
+<p>若你需要添加一个菜单项，比如 something。那么就需要修改简体中文对应的翻译文件 <code>languages/zh-Hans.yml</code>，在 menu 字段下添加一项：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: 首页</span><br><span class="line">archives: 归档</span><br><span class="line">categories: 分类</span><br><span class="line">tags: 标签</span><br><span class="line">about: 关于</span><br><span class="line">search: 搜索</span><br><span class="line">commonweal: 公益404</span><br><span class="line">something: 有料</span><br></pre></td></tr></table></figure></p>
+<h3 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h3><p>修改字段<code>avatar</code>,值设置成头像的连接地址。头像的链接地址可以是:<br>互联网URL地址、站内的地址、可以将头像保存在themes/next/source/image,也可以将头像保存在/source/uploads中<br>例如：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: /uploads/avatar.jpg</span><br></pre></td></tr></table></figure></p>
+<h3 id="设置动画效果背景"><a href="#设置动画效果背景" class="headerlink" title="设置动画效果背景"></a>设置动画效果背景</h3><p>设置canvas_nest，注意在配置文件中有两个canvas_nest属性，一定要选择<code>canvas_nest: false</code>,将false设置为true<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure></p>
+<h1 id="创建标签目录、分类目录和文章模板"><a href="#创建标签目录、分类目录和文章模板" class="headerlink" title="创建标签目录、分类目录和文章模板"></a>创建标签目录、分类目录和文章模板</h1><p>创建tags和categories文件夹主要为了保存tags和categories<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></p>
+<p>创建完后分别修改tags文件夹下的index.md和categories文件夹下的index.md分别增加<code>type</code>属性<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type: tags</span><br><span class="line">type: categories</span><br></pre></td></tr></table></figure></p>
+<img src="/2018/08/05/hexo-blog/tags.png">
+<p>修改<code>scaffolds/post.md</code>文件，增加如下代码<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tags: &#123;&#123; tags &#125;&#125;</span><br><span class="line">categories: &#123;&#123; categories &#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<img src="/2018/08/05/hexo-blog/scaffolds.png">
+<h1 id="开始写文章"><a href="#开始写文章" class="headerlink" title="开始写文章"></a>开始写文章</h1><p>首先，新建文章然后修改index.md来开始写文章，首先修改tags，categories信息,index.md要利用markdown标记语言编写文章，在写文章是要先熟悉markdown语言的语法，具体语法可以查看<a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener">help markdown</a>。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &apos;title&apos;</span><br></pre></td></tr></table></figure></p>
+<img src="/2018/08/05/hexo-blog/articles.png">
+<p>最后，编写完的博客如图所示：<br><img src="/2018/08/05/hexo-blog/blog-article.png"></p>
+<div style="text-align:center;font-size:20px;font-weight:bold">END</div>
       
     </div>
     
@@ -490,11 +534,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/hexo/" rel="tag"> hexo</a>
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/git/" rel="tag"> git</a>
           
-            <a href="/tags/next/" rel="tag"># next</a>
+            <a href="/tags/next/" rel="tag"> next</a>
           
         </div>
       
@@ -503,22 +547,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/07/26/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -581,6 +609,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="Feridy" />
+            
               <p class="site-author-name" itemprop="name">Feridy</p>
               <p class="site-description motion-element" itemprop="description">Feridy's Blog</p>
           </div>
@@ -592,7 +624,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -603,7 +635,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -614,7 +646,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -663,7 +695,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装next"><span class="nav-number">2.</span> <span class="nav-text">安装next</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置github用来发布你的博客"><span class="nav-number">3.</span> <span class="nav-text">配置github用来发布你的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改博客目录下的-config-yml来实现发布到github上"><span class="nav-number">3.1.</span> <span class="nav-text">修改博客目录下的_config.yml来实现发布到github上</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装next"><span class="nav-number">2.</span> <span class="nav-text">安装next</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置github用来发布你的博客"><span class="nav-number">3.</span> <span class="nav-text">配置github用来发布你的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改博客目录下的-config-yml来实现发布到github上"><span class="nav-number">3.1.</span> <span class="nav-text">修改博客目录下的_config.yml来实现发布到github上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接下来进行相关配置-注意冒号后边一定要跟一个半角的空格"><span class="nav-number">4.</span> <span class="nav-text">接下来进行相关配置(注意冒号后边一定要跟一个半角的空格)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先对博客根目录下的-config-yml配置文件进行配置"><span class="nav-number">4.1.</span> <span class="nav-text">首先对博客根目录下的_config.yml配置文件进行配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对博客themes主题文件夹next文件夹下的-config-yml配置文件进行配置"><span class="nav-number">4.2.</span> <span class="nav-text">对博客themes主题文件夹next文件夹下的_config.yml配置文件进行配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择Scheme"><span class="nav-number">4.2.1.</span> <span class="nav-text">选择Scheme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">4.2.2.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置头像"><span class="nav-number">4.2.3.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置动画效果背景"><span class="nav-number">4.2.4.</span> <span class="nav-text">设置动画效果背景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建标签目录、分类目录和文章模板"><span class="nav-number">5.</span> <span class="nav-text">创建标签目录、分类目录和文章模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始写文章"><span class="nav-number">6.</span> <span class="nav-text">开始写文章</span></a></li></ol></div>
             
 
           </div>
