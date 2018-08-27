@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,感悟,总结," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言这篇文章，主要介绍一下CSS的特性、选择器的权重问题、CSS的背景属性（background)、CSS中Web字体的使用以及文字换行，和显示省略号的样式。接下来我们开始。 CSS的特性-继承性、层叠性、优先级三个特性继承性-这个特性主要对文本样式有效所谓继承性是指书写CSS样式表时，子标签会继承父标签的某些样式，如文本颜色和字号。想要设置一个可继承的属性，只需将它应用于父元素即可。集成的特性主">
+<meta name="keywords" content="学习,感悟,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web前端CSS的学习总结(二)">
+<meta property="og:url" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/index.html">
+<meta property="og:site_name" content="Welcome To Feridy Blog">
+<meta property="og:description" content="前言这篇文章，主要介绍一下CSS的特性、选择器的权重问题、CSS的背景属性（background)、CSS中Web字体的使用以及文字换行，和显示省略号的样式。接下来我们开始。 CSS的特性-继承性、层叠性、优先级三个特性继承性-这个特性主要对文本样式有效所谓继承性是指书写CSS样式表时，子标签会继承父标签的某些样式，如文本颜色和字号。想要设置一个可继承的属性，只需将它应用于父元素即可。集成的特性主">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/background.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/伸缩门效果.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/3w4CwHw.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/icomoon.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/download.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/select.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/down.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/iconfonts.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/iconfontuse.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/overflow.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/xian.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/line2.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/white-space.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/normal.png">
+<meta property="og:updated_time" content="2018-08-27T10:34:16.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web前端CSS的学习总结(二)">
+<meta name="twitter:description" content="前言这篇文章，主要介绍一下CSS的特性、选择器的权重问题、CSS的背景属性（background)、CSS中Web字体的使用以及文字换行，和显示省略号的样式。接下来我们开始。 CSS的特性-继承性、层叠性、优先级三个特性继承性-这个特性主要对文本样式有效所谓继承性是指书写CSS样式表时，子标签会继承父标签的某些样式，如文本颜色和字号。想要设置一个可继承的属性，只需将它应用于父元素即可。集成的特性主">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/background.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/"/>
+
+
+
+
+
+  <title>Web前端CSS的学习总结(二) | Welcome To Feridy Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome To Feridy Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/The-second-CSS-learning-record/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feridy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome To Feridy Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web前端CSS的学习总结(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T07:32:22+08:00">
+                2018-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章，主要介绍一下CSS的特性、选择器的权重问题、CSS的背景属性（<strong>background</strong>)、CSS中Web字体的使用以及文字换行，和显示省略号的样式<!--、以及CSS3新增的属性 -->。接下来我们开始。</p>
+<h1 id="CSS的特性-继承性、层叠性、优先级三个特性"><a href="#CSS的特性-继承性、层叠性、优先级三个特性" class="headerlink" title="CSS的特性-继承性、层叠性、优先级三个特性"></a>CSS的特性-继承性、层叠性、优先级三个特性</h1><h2 id="继承性-这个特性主要对文本样式有效"><a href="#继承性-这个特性主要对文本样式有效" class="headerlink" title="继承性-这个特性主要对文本样式有效"></a>继承性-这个特性主要对文本样式有效</h2><p>所谓继承性是指书写CSS样式表时，子标签会继承父标签的某些样式，如文本颜色和字号。想要设置一个可继承的属性，只需将它应用于父元素即可。<br>集成的特性主要有一下：</p>
+<blockquote>
+<p>内联元素可继承：letter-spacing、word-spacing、white-space、line-height、color、font、font-family、font-size、font-style、font-variant、font-weight、text-decoration、text-transform、direction。<br>终端块状元素可继承：text-indent和text-align。<br>列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。<br><a id="more"></a><br>注意：</p>
+</blockquote>
+<blockquote>
+<p>恰当地使用继承可以简化代码，降低CSS样式的复杂性。子元素可以继承父元素的样式（text-，font-，line-这些元素开头的都可以继承，以及color属性）</p>
+</blockquote>
+<h2 id="层叠性-所谓层叠性是指多种CSS样式的叠加"><a href="#层叠性-所谓层叠性是指多种CSS样式的叠加" class="headerlink" title="层叠性-所谓层叠性是指多种CSS样式的叠加"></a>层叠性-所谓层叠性是指多种CSS样式的叠加</h2><p>是浏览器处理冲突的一个能力,如果一个属性通过两个相同选择器设置到同一个元素上，那么这个时候一个属性就会将另一个属性层叠掉</p>
+<p>比如先给某个标签指定了内部文字颜色为红色，接着又指定了颜色为蓝色，此时出现一个标签指定了相同样式不同值的情况，这就是样式冲突。  就近原则</p>
+<p>一般情况下，如果出现样式冲突，则会按照CSS书写的顺序，以最后的样式为准。</p>
+<ol>
+<li>样式冲突，遵循的原则是就近原则。 那个样式离着结构近，就执行那个样式。</li>
+<li>样式不冲突，不会层叠</li>
+</ol>
+<h2 id="优先级特性-定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。"><a href="#优先级特性-定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。" class="headerlink" title="优先级特性-定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。"></a>优先级特性-定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。</h2><p>关于优先级特性，其实就是样式生效的权重问题，这对这个问题，有一个权重的计算规则表</p>
+<table>
+<thead>
+<tr>
+<th>继承或者* 的贡献值</th>
+<th>0,0,0,0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每个元素（标签）贡献值为</td>
+<td>0,0,0,1</td>
+</tr>
+<tr>
+<td>每个类，伪类贡献值为</td>
+<td>0,0,1,0</td>
+</tr>
+<tr>
+<td>每个ID贡献值为</td>
+<td>0,1,0,0</td>
+</tr>
+<tr>
+<td>每个行内样式贡献值</td>
+<td>1,0,0,0</td>
+</tr>
+<tr>
+<td>每个!important贡献值  重要的</td>
+<td>∞ 无穷大</td>
+</tr>
+</tbody>
+</table>
+<p>总结优先级：</p>
+<ol>
+<li>使用了 !important声明的规则。</li>
+<li>内嵌在 HTML 元素的 style属性里面的声明。</li>
+<li>使用了 ID 选择器的规则。</li>
+<li>使用了类选择器、属性选择器、伪元素和伪类选择器的规则。</li>
+<li>使用了元素选择器的规则。</li>
+<li>只包含一个通用选择器的规则。</li>
+<li>同一类选择器则遵循就近原则。</li>
+<li>他们在计算的时候没有进制的关系的。</li>
+</ol>
+<blockquote>
+<p>总结：权重是优先级的算法，层叠是优先级的表现</p>
+</blockquote>
+<h1 id="背景的设置-background"><a href="#背景的设置-background" class="headerlink" title="背景的设置-background"></a>背景的设置-background</h1><p><img src="background.png" alt="background" title="background常用到的六个属性"></p>
+<p>CSS 可以添加背景颜色和背景图片，以及来进行图片设置。</p>
+<table>
+<thead>
+<tr>
+<th>background-color</th>
+<th>背景颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background-image</td>
+<td>背景图片地址</td>
+</tr>
+<tr>
+<td>background-repeat</td>
+<td>是否平铺</td>
+</tr>
+<tr>
+<td>background-position</td>
+<td>背景位置</td>
+</tr>
+<tr>
+<td>background-attachment</td>
+<td>背景固定还是滚动</td>
+</tr>
+<tr>
+<td>背景的合写（复合属性）</td>
+<td>background:背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</td>
+</tr>
+</tbody>
+</table>
+<h2 id="background-color-背景颜色"><a href="#background-color-背景颜色" class="headerlink" title="background-color-背景颜色"></a>background-color-背景颜色</h2><p>背景颜色的设置可以有三种方式：</p>
+<ol>
+<li>直接颜色名的方式表示，例如：<code>background-color: red;</code></li>
+<li>利用十六进制的颜色表示法来显示，例如：<code>background-color: #fff;</code></li>
+<li>利用RGBA和RGB方式来进行表示，其中RGBA可以设置颜色的透明度，例如：<code>background-color: rgba(0,0,0,0.5)</code>,其中0.5就是颜色的透明度，这个数的取值范围是0 ~ 1，取1的时候就是不透明，取零就是全透明。rgb颜色表示法，只有rgba的前三个参数，例如：<code>background-color: rgb(0,0,0,);</code>。</li>
+</ol>
+<h2 id="background-image-背景图片"><a href="#background-image-背景图片" class="headerlink" title="background-image 背景图片"></a>background-image 背景图片</h2><p>语法： </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image : none | url (url);</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p>none : 　无背景图（默认的）<br>url : 　使用绝对或相对地址指定背景图像</p>
+<p>background-image 属性允许指定一个图片展示在背景中（只有CSS3才可以多背景）可以和 background-color 连用。 如果图片不重复地话，图片覆盖不到地地方都会被背景色填充。 如果有背景图片平铺，则会覆盖背景颜色。</p>
+<h2 id="background-repeat-背景平铺"><a href="#background-repeat-背景平铺" class="headerlink" title="background-repeat 背景平铺"></a>background-repeat 背景平铺</h2><p>语法： </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-repeat : repeat | no-repeat | repeat-x | repeat-y</span><br></pre></td></tr></table></figure>
+<p>参数： </p>
+<p>repeat : 　背景图像在纵向和横向上平铺（默认的）</p>
+<p>no-repeat : 　背景图像不平铺</p>
+<p>repeat-x : 　背景图像在横向上平铺</p>
+<p>repeat-y : 　背景图像在纵向平铺 </p>
+<p>设置背景图片时，默认把图片在水平和垂直方向平铺以铺满整个元素。</p>
+<p>repeat-x : 　背景图像在横向上平铺  </p>
+<p>repeat-y : 　背景图像在纵向平铺</p>
+<h2 id="beckground-position-背景图片的位置"><a href="#beckground-position-背景图片的位置" class="headerlink" title="beckground-position 背景图片的位置"></a>beckground-position 背景图片的位置</h2><p>语法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background-position: 百分比 || 百分比;</span><br><span class="line">background-position: position || position;</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p>position : 　top | center | bottom | left | center | right</p>
+<p>说明：</p>
+<p>设置或检索对象的背景图像位置。必须先指定background-image属性。默认值为：(0% 0%)。<br>如果只指定了一个值，该值将用于横坐标。纵坐标将默认为50%。第二个值将用于纵坐标，意思就是，如果只写一个值则另一个值默认是居中。</p>
+<p>注意：</p>
+<ol>
+<li>position 后面是x坐标和y坐标。 可以使用方位名词或者 精确单位。</li>
+<li>如果和精确单位和方位名字混合使用，则必须是x坐标在前，y坐标后面。比如 background-position: 15px top;   则 15px 一定是  x坐标   top是 y坐标</li>
+</ol>
+<h2 id="background-attachment-背景附着"><a href="#background-attachment-背景附着" class="headerlink" title="background-attachment 背景附着"></a>background-attachment 背景附着</h2><p>语法： </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-attachment : scroll | fixed</span><br></pre></td></tr></table></figure>
+<p>参数： </p>
+<p>scroll : 　背景图像是随对象内容滚动<br>fixed : 　背景图像固定 </p>
+<p>说明： </p>
+<p>设置或检索背景图像是随对象内容滚动还是固定的。</p>
+<h2 id="利用背景这个属性制作导航栏的自动伸缩门的效果"><a href="#利用背景这个属性制作导航栏的自动伸缩门的效果" class="headerlink" title="利用背景这个属性制作导航栏的自动伸缩门的效果"></a>利用背景这个属性制作导航栏的自动伸缩门的效果</h2><p>这个效果可以，看一下微信的官网页面，其中导航栏就是利用了这个技巧。</p>
+<p><img src="伸缩门效果.png" alt="微信伸缩门效果"></p>
+<p>导航栏中盒子的宽度不一样，但是他们左右两边的圆角是一样的，这个特效就是利用了CSS的背景图片定位的效果。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>微信<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    li &#123;</span></span><br><span class="line"><span class="undefined">        list-style: none;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 页面背景墙 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line"><span class="undefined">        height: 500px;</span></span><br><span class="line"><span class="undefined">        background: url(../image/3S9sFMD.jpg);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 页面版心 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">        margin: 0 auto;</span></span><br><span class="line"><span class="undefined">        padding: 0 10px;</span></span><br><span class="line"><span class="undefined">        width: 968px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 页面头部导航栏头部 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.header</span> &#123;</span></span><br><span class="line"><span class="undefined">        height: 75px;</span></span><br><span class="line"><span class="undefined">        line-height: 75px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 页面logo */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.logo</span> &#123;</span></span><br><span class="line"><span class="undefined">        float: left;</span></span><br><span class="line"><span class="undefined">        margin-top: 14px;</span></span><br><span class="line"><span class="undefined">        height: 44px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 导航样式 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line"><span class="undefined">        float: right;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="undefined">        float: left;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line"><span class="undefined">        display: inline-block;</span></span><br><span class="line"><span class="undefined">        padding-left: 16px;</span></span><br><span class="line"><span class="undefined">        text-decoration: none;</span></span><br><span class="line"><span class="undefined">        font-size: 14px;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-id">#ffffff</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="undefined">        display: inline-block;</span></span><br><span class="line"><span class="undefined">        padding-right: 16px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 伸缩门效果技巧 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">        background: url(../image/3w4CwHw.png) no-repeat left 50%;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.nav</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="undefined">        background: url(../image/3w4CwHw.png) no-repeat right 50%;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    /* 伸缩门其实就是利用两个标签，分别去最左侧的背景和最右侧的背景，他们分别</span></span><br><span class="line"><span class="undefined">    利用padding-left和padding-right来突出间隔，显示那个圆弧。 */</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../image/dNEBuK6.png"</span> <span class="attr">alt</span>=<span class="string">"微信logo"</span> <span class="attr">class</span>=<span class="string">"logo"</span> <span class="attr">title</span>=<span class="string">"微信"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 导航栏结构 --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="comment">&lt;!-- 为了实现伸缩门的效果一定要有一个标签包裹另一个标签 --&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>  </span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>帮助与反馈<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>公众平台<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>开放平台<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>微信支付<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>微信网页版<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>表情开放平台<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>微信广告<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>代码中用到的图片：</p>
+<p><img src="3w4CwHw.png" alt="weixin huadongmen" title="background-image"></p>
+<h1 id="Web字体"><a href="#Web字体" class="headerlink" title="Web字体"></a>Web字体</h1><h2 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h2><p>不同浏览器所支持的字体格式是不一样的，我们有必要了解一下有关字体格式的知识。</p>
+<p>1、TureType(.ttf)格式</p>
+<p>.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；</p>
+<p>2、OpenType(.otf)格式</p>
+<p>.otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile、Safari4.2+；</p>
+<p>3、Web Open Font Format(.woff)格式</p>
+<p>woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；</p>
+<p>4、Embedded Open Type(.eot)格式</p>
+<p>.eot字体是IE专用字体，可以从TrueType创建此格式字体，支持这种字体的浏览器有IE4+；</p>
+<p>5、SVG(.svg)格式</p>
+<p>.svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；</p>
+<p>了解了上面的知识后，我们就需要为不同的浏览器准备不同格式的字体，通常我们会通过字体生成工具帮我们生成各种格式的字体，因此无需过于在意字体格式间的区别差异。</p>
+<h2 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h2><p>图片是有诸多优点的，但是缺点很明显，比如图片不但增加了总文件的大小，还增加了很多额外的”http请求”，这都会大大降低网页的性能的。更重要的是图片不能很好的进行“缩放”，因为图片放大和缩小会失真。 我们后面会学习移动端响应式，很多情况下希望我们的图标是可以缩放的。此时，一个非常重要的技术出现了，额不是出现了，是以前就有，是被从新”宠幸”啦。。 这就是字体图标（iconfont).</p>
+<h2 id="字体图标优点"><a href="#字体图标优点" class="headerlink" title="字体图标优点"></a>字体图标优点</h2><blockquote>
+<p>可以做出跟图片一样可以做的事情,改变透明度、旋转度，等..<br>但是本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果等等…<br>本身体积更小，但携带的信息并没有削减。<br>几乎支持所有的浏览器<br>移动端设备必备良药…</p>
+</blockquote>
+<h1 id="字体图标的使用，我一般使用icomoon字库"><a href="#字体图标的使用，我一般使用icomoon字库" class="headerlink" title="字体图标的使用，我一般使用icomoon字库"></a>字体图标的使用，我一般使用<a href="http://icomoon.io" target="_blank" rel="noopener"><strong>icomoon字库</strong></a></h1><p><img src="icomoon.png" alt="icomoon字体库" title="icomoon index pag"></p>
+<p>具体的使用：</p>
+<ol>
+<li><p>进入 <a href="https://icomoon.io/" target="_blank" rel="noopener">https://icomoon.io/</a> 下载需要的字体文件到本地计算机上</p>
+<p><img src="download.png" alt="下载字体文件"><br><img src="select.png" alt="generate selected fonts"><br><img src="down.png" alt="download selected fonts"></p>
+</li>
+<li><p>解压文件，将fonts文件夹放到项目目录下</p>
+<p><img src="iconfonts.png" alt="icomoon fonts"></p>
+</li>
+<li><p>开始使用字体图标，首先我们要将下载好的字体引入到HTML文件中<br>引入字体，利用css字体声明：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">'icomoont'</span>;</span><br><span class="line">    <span class="attribute">src</span>:  <span class="built_in">url</span>(<span class="string">'fonts/icomoon.eot?s1xyct'</span>);</span><br><span class="line">    <span class="attribute">src</span>:  <span class="built_in">url</span>(<span class="string">'fonts/icomoon.eot?s1xyct#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">    <span class="built_in">url</span>(<span class="string">'fonts/icomoon.ttf?s1xyct'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</span><br><span class="line">    <span class="built_in">url</span>(<span class="string">'fonts/icomoon.woff?s1xyct'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</span><br><span class="line">    <span class="built_in">url</span>(<span class="string">'fonts/icomoon.svg?s1xyct#icomoon'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段声明字体的样式，我们可以在我们刚刚下载解压的icomoon文件夹下的style.css 文件中的第一段中找到，可以直接拷贝下来。</p>
+<p>现在可以开始使用字体了，是有这个字体时要注意,一定要将字体设置为刚刚声明的字体，也就是我们一定要在样式中写入这样的代码：<code>font-family: &#39;icomoon&#39;;</code><br>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">'icommon'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二步，找到相应的字有两种方式使用，一种是利用伪类的方式，另一种是直接使用的方式。<br>我们要在icomoon这个文件夹下，找到一个dom.html的文件打开。</p>
+<p><img src="iconfontuse.png" alt="icon font used"></p>
+<p>可以利用伪类，在伪类的content中写入这个图标的编码，如图片的左下角的代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这个就是一个小房子的图标，图片红框标记的地方 */</span></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">'\e900'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还可以直接拷贝，拷贝的是右下角的蓝色的方框，如图标记的地方</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这就是直接拷贝右下角的信息，看着像是没有信息，其实是有信息的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="visibility-可见性"><a href="#visibility-可见性" class="headerlink" title="visibility 可见性"></a>visibility 可见性</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visibility: visible || hidden;</span><br><span class="line"><span class="comment">/* visble: 可见的；</span></span><br><span class="line"><span class="comment">hidden: 隐藏的；这个遗憾和display: none;的不同是 隐藏之后继续保留原有的位置，不脱标 */</span></span><br></pre></td></tr></table></figure>
+<h1 id="overflow-超出内容管理"><a href="#overflow-超出内容管理" class="headerlink" title="overflow 超出内容管理"></a>overflow 超出内容管理</h1><p><img src="overflow.png" alt="overflow" title="overflow property"></p>
+<p><strong>给父级盒子容器，添加 <code>overflow: hidden;</code> 可以清楚浮动和margin-top塌陷问题。</strong></p>
+<h1 id="cursor-鼠标显示的样式"><a href="#cursor-鼠标显示的样式" class="headerlink" title="cursor 鼠标显示的样式"></a>cursor 鼠标显示的样式</h1><table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td>默认光标（通常是一个箭头）</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>默认。浏览器设置的光标。</td>
+</tr>
+<tr>
+<td>crosshair</td>
+<td>光标呈现为十字线。</td>
+</tr>
+<tr>
+<td>pointer</td>
+<td>光标呈现为指示链接的指针（一只手）</td>
+</tr>
+<tr>
+<td>move</td>
+<td>此光标指示某对象可被移动。</td>
+</tr>
+<tr>
+<td>e-resize</td>
+<td>此光标指示矩形框的边缘可被向右（东）移动。</td>
+</tr>
+<tr>
+<td>ne-resize</td>
+<td>此光标指示矩形框的边缘可被向上及向右移动（北/东）。</td>
+</tr>
+<tr>
+<td>nw-resize</td>
+<td>此光标指示矩形框的边缘可被向上及向左移动（北/西）。</td>
+</tr>
+<tr>
+<td>n-resize</td>
+<td>此光标指示矩形框的边缘可被向上（北）移动。</td>
+</tr>
+<tr>
+<td>se-resize</td>
+<td>此光标指示矩形框的边缘可被向下及向右移动（南/东）。</td>
+</tr>
+<tr>
+<td>sw-resize</td>
+<td>此光标指示矩形框的边缘可被向下及向左移动（南/西）。</td>
+</tr>
+<tr>
+<td>s-resize</td>
+<td>此光标指示矩形框的边缘可被向下移动（南）。</td>
+</tr>
+<tr>
+<td>w-resize</td>
+<td>此光标指示矩形框的边缘可被向左移动（西）。</td>
+</tr>
+<tr>
+<td>text</td>
+<td>此光标指示文本。</td>
+</tr>
+<tr>
+<td>wait</td>
+<td>此光标指示程序正忙（通常是一只表或沙漏）。</td>
+</tr>
+<tr>
+<td>help</td>
+<td>此光标指示可用的帮助（通常是一个问号或一个气球）。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="vertical-align-垂直居中"><a href="#vertical-align-垂直居中" class="headerlink" title="vertical-align 垂直居中"></a>vertical-align 垂直居中</h1><p><img src="xian.jpg" alt="vertical-align"></p>
+<p>语法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align : baseline |top |middle |bottom；</span><br></pre></td></tr></table></figure>
+<p>vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， <strong>通常用来控制图片/表单与文字的对齐</strong>。</p>
+<h2 id="最常用的的是解决图片下方空白间隙的问题"><a href="#最常用的的是解决图片下方空白间隙的问题" class="headerlink" title="最常用的的是解决图片下方空白间隙的问题"></a>最常用的的是解决图片下方空白间隙的问题</h2><p>在介绍这个问题前，我们先要看一下文字的是如何对其的以及行高是如何测量的，看一张图片我们就可以明白，文本是基于文字的基线对其的，这个就像以前写英语作业的英语作业本一样。</p>
+<p>  <img src="line2.png" alt="Measuring line height"></p>
+<p>由于图片底线会和父级盒子的基线对齐。这样会造成一个问题，就是图片底侧会有一个空白缝隙。</p>
+<p>解决这个问题，有两种方法：</p>
+<ol>
+<li><p>改变对其垂直方向上的对其方式,不让图片基于基线对其就可以：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 给img vertical-align:middle | top | bottom等等。  让图片不要和基线对齐 */</span></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">vertical-align</span>: bottom | top |middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改变图片的显示类型，给img 添加 display：block; 转换为块级元素就不会存在问题了:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="文本过多超出了容器时，显示省略号的方法"><a href="#文本过多超出了容器时，显示省略号的方法" class="headerlink" title="文本过多超出了容器时，显示省略号的方法"></a>文本过多超出了容器时，显示省略号的方法</h1><ol>
+<li>不让文字换行</li>
+<li>隐藏超出的文字</li>
+<li>设置显示成省略号</li>
+</ol>
+<p>这三个部分用到了不同的属性：</p>
+<p>不让文字换行显示：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">white-space: normal | nowrap ;</span><br><span class="line"><span class="selector-tag">normal</span>: 正常显示，自动换行。</span><br><span class="line"><span class="selector-tag">nowrap</span>: 强制一行显示。</span><br></pre></td></tr></table></figure>
+<p>文字超出时要隐藏起来</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br></pre></td></tr></table></figure>
+<p>文字显示换成省略号：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure>
+<p>注意：<strong>这三个属性一样要同时设置</strong>。</p>
+<p><img src="white-space.png" alt="ellipsis" title="nowrap hidden ellipsis"></p>
+<p>在样式中加入了:hover 当鼠标放在这个盒子上时正常显示</p>
+<p><img src="normal.png" alt="normal" title="white-space: normal"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.text-contain</span> &#123;</span></span><br><span class="line"><span class="undefined">        margin: 50px auto;</span></span><br><span class="line"><span class="undefined">        padding: 10px;</span></span><br><span class="line"><span class="undefined">        border: 1px solid black;</span></span><br><span class="line"><span class="undefined">        width: 400px;</span></span><br><span class="line"><span class="undefined">        font-size: 14px;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">line-height</span>: 1<span class="selector-class">.5</span>;</span></span><br><span class="line"><span class="undefined">        background-color: orange;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 一行显示，显示不下时显示省略号 三个属性一定要同时存在*/</span></span></span><br><span class="line"><span class="undefined">        white-space: nowrap;</span></span><br><span class="line"><span class="undefined">        overflow: hidden;</span></span><br><span class="line"><span class="undefined">        text-overflow: ellipsis;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.text-contain</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 改变一个属性，不强制在一行上显示 */</span></span></span><br><span class="line"><span class="undefined">        white-space: normal;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text-contain"</span>&gt;</span></span><br><span class="line">        那我们发一个连接工具给你们，用那个工具连我们PC机，然后PC机上有数据库连接，可以访问数据库</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div style="text-align: center;font-size: 20px; font-weight: 700; line-height: 1.6;"><br>END<br></div>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"> 学习</a>
+          
+            <a href="/tags/感悟/" rel="tag"> 感悟</a>
+          
+            <a href="/tags/总结/" rel="tag"> 总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/Css-Study/" rel="next" title="Web前端CSS的学习总结(一)">
+                <i class="fa fa-chevron-left"></i> Web前端CSS的学习总结(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="Feridy" />
+            
+              <p class="site-author-name" itemprop="name">Feridy</p>
+              <p class="site-description motion-element" itemprop="description">Feridy's Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/feridy" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xliu16@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS的特性-继承性、层叠性、优先级三个特性"><span class="nav-number">2.</span> <span class="nav-text">CSS的特性-继承性、层叠性、优先级三个特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承性-这个特性主要对文本样式有效"><span class="nav-number">2.1.</span> <span class="nav-text">继承性-这个特性主要对文本样式有效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层叠性-所谓层叠性是指多种CSS样式的叠加"><span class="nav-number">2.2.</span> <span class="nav-text">层叠性-所谓层叠性是指多种CSS样式的叠加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级特性-定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。"><span class="nav-number">2.3.</span> <span class="nav-text">优先级特性-定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景的设置-background"><span class="nav-number">3.</span> <span class="nav-text">背景的设置-background</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#background-color-背景颜色"><span class="nav-number">3.1.</span> <span class="nav-text">background-color-背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background-image-背景图片"><span class="nav-number">3.2.</span> <span class="nav-text">background-image 背景图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background-repeat-背景平铺"><span class="nav-number">3.3.</span> <span class="nav-text">background-repeat 背景平铺</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#beckground-position-背景图片的位置"><span class="nav-number">3.4.</span> <span class="nav-text">beckground-position 背景图片的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background-attachment-背景附着"><span class="nav-number">3.5.</span> <span class="nav-text">background-attachment 背景附着</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用背景这个属性制作导航栏的自动伸缩门的效果"><span class="nav-number">3.6.</span> <span class="nav-text">利用背景这个属性制作导航栏的自动伸缩门的效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web字体"><span class="nav-number">4.</span> <span class="nav-text">Web字体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字体格式"><span class="nav-number">4.1.</span> <span class="nav-text">字体格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体图标"><span class="nav-number">4.2.</span> <span class="nav-text">字体图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体图标优点"><span class="nav-number">4.3.</span> <span class="nav-text">字体图标优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字体图标的使用，我一般使用icomoon字库"><span class="nav-number">5.</span> <span class="nav-text">字体图标的使用，我一般使用icomoon字库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#visibility-可见性"><span class="nav-number">6.</span> <span class="nav-text">visibility 可见性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow-超出内容管理"><span class="nav-number">7.</span> <span class="nav-text">overflow 超出内容管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cursor-鼠标显示的样式"><span class="nav-number">8.</span> <span class="nav-text">cursor 鼠标显示的样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vertical-align-垂直居中"><span class="nav-number">9.</span> <span class="nav-text">vertical-align 垂直居中</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最常用的的是解决图片下方空白间隙的问题"><span class="nav-number">9.1.</span> <span class="nav-text">最常用的的是解决图片下方空白间隙的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本过多超出了容器时，显示省略号的方法"><span class="nav-number">10.</span> <span class="nav-text">文本过多超出了容器时，显示省略号的方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feridy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
