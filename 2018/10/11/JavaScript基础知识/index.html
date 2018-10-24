@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,感悟,总结," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="认识JavaScript-JavaScript是什么JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。—-来自百度百科 JavaScript具有的特点我们通过上面的一段话，可以">
+<meta name="keywords" content="学习,感悟,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript基础知识">
+<meta property="og:url" content="http://yoursite.com/2018/10/11/JavaScript基础知识/index.html">
+<meta property="og:site_name" content="Welcome To Feridy Blog">
+<meta property="og:description" content="认识JavaScript-JavaScript是什么JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。—-来自百度百科 JavaScript具有的特点我们通过上面的一段话，可以">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/10/11/JavaScript基础知识/first.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/11/JavaScript基础知识/ct_js_string.gif">
+<meta property="og:updated_time" content="2018-10-24T12:40:10.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript基础知识">
+<meta name="twitter:description" content="认识JavaScript-JavaScript是什么JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。—-来自百度百科 JavaScript具有的特点我们通过上面的一段话，可以">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/11/JavaScript基础知识/first.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/11/JavaScript基础知识/"/>
+
+
+
+
+
+  <title>JavaScript基础知识 | Welcome To Feridy Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome To Feridy Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/11/JavaScript基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feridy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome To Feridy Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript基础知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T14:44:11+08:00">
+                2018-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WEB前端/" itemprop="url" rel="index">
+                    <span itemprop="name">WEB前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WEB前端/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/2018/10/11/JavaScript基础知识/first.png">
+<h1 id="认识JavaScript-JavaScript是什么"><a href="#认识JavaScript-JavaScript是什么" class="headerlink" title="认识JavaScript-JavaScript是什么"></a>认识JavaScript-JavaScript是什么</h1><p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。—-来自百度百科</p>
+<h2 id="JavaScript具有的特点"><a href="#JavaScript具有的特点" class="headerlink" title="JavaScript具有的特点"></a>JavaScript具有的特点</h2><p>我们通过上面的一段话，可以看出JavaScript具有以下特点：</p>
+<ul>
+<li>脚本语言</li>
+<li>具有动态类型的特点</li>
+<li>具有弱类型的特点</li>
+<li>它是基于原型的一种语言</li>
+<li>它需要解释器来执行-可以理解为需要浏览器</li>
+<li>它是一种客户端的脚本语言</li>
+</ul>
+<p>这是我们通过上面百度百科的解释来总结出来的它具有的一些特点。</p>
+<h2 id="JavaScript的组成部分"><a href="#JavaScript的组成部分" class="headerlink" title="JavaScript的组成部分"></a>JavaScript的组成部分</h2><p>它由三大部分组成：ECMAScript基本语法和库，DOM对象，BOM对象；</p>
+<a id="more"></a>
+<ul>
+<li>ECMAScript：描述了他的基本语法要求和一些基本的内置库的规范支持</li>
+<li>DOM对象：Document Object Model 文档对象模型</li>
+<li>BOM对象：Browser Object Model 浏览器对象模型</li>
+</ul>
+<p>总结一句话就是：ECMA是规范和语法约束，DOM和BOM是API接口操作，DOM是操作HTML等标签的，BOM是操作浏览器相关接口的API。</p>
+<h2 id="JavaScript中的数据类型"><a href="#JavaScript中的数据类型" class="headerlink" title="JavaScript中的数据类型"></a>JavaScript中的数据类型</h2><h3 id="内置的六种基本数据类型"><a href="#内置的六种基本数据类型" class="headerlink" title="内置的六种基本数据类型"></a>内置的六种基本数据类型</h3><ul>
+<li>Number 数字类型</li>
+<li>String 字符串类型</li>
+<li>boolean 布尔类型</li>
+<li>null 空类型</li>
+<li>undefined 未定义类型</li>
+<li>Object 引用对象类型</li>
+</ul>
+<ol>
+<li><p>Number 数字类型</p>
+<p>数字类型有一个取值范围是从Number.MAX_VALUE - Number.MIN_VALUE 的值这个是根据计算机的位数有关。</p>
+<p>在js中可以表示八进制和十六进制：</p>
+<ul>
+<li>八进制以0开头 例如 var number = 012; // 十进制的10</li>
+<li><p>十六进制以0x开头 例如 var number = 0x10; // 十进制的10</p>
+<p><em>注意：如果一个数类型与undefined类型进行运算或者与一个不能转换为数字类型的字符串类型进行非相加运算时，则会返回NaN的</em><br>验证一个数据是不是NaN 使用isNaN()方法。 例如：</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> string = <span class="string">'xasd'</span>;</span><br><span class="line"><span class="keyword">var</span> newNumber = number / string;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(newNumber));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String 字符串类型</p>
+<p>String 类型的独特之处在于，它是唯一没有固定大小的原始类型，字符串中每个字符都有特定的位置，首字符从位置 0 开始，第二个字符在位置 1，依此类推。</p>
+<img src="/2018/10/11/JavaScript基础知识/ct_js_string.gif">
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">'abcd'</span>;</span><br><span class="line"><span class="keyword">var</span> len = string.length; <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(string[<span class="number">0</span>]); <span class="comment">// 'a'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>undefined类型</p>
+<p>Undefined 类型只有一个值，即 undefined。当声明的变量未初始化时，该变量的默认值是 undefined。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> param;</span><br><span class="line"><span class="built_in">console</span>.log(param); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(param === <span class="literal">undefined</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>null 类型</p>
+<p>这个类型只有一个专用值，为null值。 undefined 实际上是从值 null 派生来的，因此 ECMAScript 把它们定义为相等的。但是他们的意义是完全是不一样的，null 则用于表示尚未存在的对象（在讨论 typeof 运算符时，简单地介绍过这一点）。如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> === <span class="literal">null</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据类型的转换</p>
+<p><strong>字符串类型转换为数字类型：</strong></p>
+<ol>
+<li>利用<code>parseInt()</code>将字符串类型转换为整数</li>
+<li>利用<code>parseFloat()</code>将字符串类型转换为浮点数</li>
+<li>利用<code>Number()</code>将字符类型转换为数字类型</li>
+</ol>
+<p><em>注意：<code>parseInt()</code>、<code>parseFloat()</code>,转换的字符串必须以数字来开始，<code>Number()</code>,转换的字符串必须是严格的数字格式，否则他们的都将输出NaN</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">'a1234'</span>)); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">'1234.23a'</span>)); <span class="comment">// 123</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">'0.234abc'</span>)); <span class="comment">// 0.234</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">'0.23442a'</span>)); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">'0.1234'</span>)); <span class="comment">// 0.1234</span></span><br></pre></td></tr></table></figure>
+<p><strong>数字类型转换为字符串类型</strong></p>
+<ol>
+<li>如果变量是有意义的就是用<code>toString()</code>的方法，将数字类型转换为字符串类型</li>
+<li>如果没有意思可以利用<code>String()</code>的方法转换</li>
+<li>隐式转换，就是利用‘+’字符串拼接的方法来进行转换</li>
+</ol>
+</li>
+</ol>
+<h2 id="JavaScript判断语句和循环语句"><a href="#JavaScript判断语句和循环语句" class="headerlink" title="JavaScript判断语句和循环语句"></a>JavaScript判断语句和循环语句</h2><ul>
+<li><p>if esle表达式的形式是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">12345</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> a === <span class="string">'number'</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'This is number type.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> a === <span class="string">'string'</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'This is string type.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> a === <span class="string">'object'</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'This is object type.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a === <span class="literal">undefined</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'This is undefined type.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">isNaN</span>(a))&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'This is NaN type.'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>三元表达式</p>
+<p>三元表达式： 表达式1？表达式2 ：表达式3；<br>表达式1：‘？’前面的是一个判断，如果为真就执行表达式2，如果为假就执行表达式3。空和undefined的值就是假值。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params">param</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> param ? param : <span class="string">'this is null'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>switch case语句</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1:</span><br><span class="line">    <span class="comment">// 当 expression 的结果与 value1 匹配时，执行此处语句</span></span><br><span class="line">        [<span class="keyword">break</span>;]</span><br><span class="line">    <span class="keyword">case</span> value2:</span><br><span class="line">    <span class="comment">// 当 expression 的结果与 value2 匹配时，执行此处语句</span></span><br><span class="line">        [<span class="keyword">break</span>;]</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">case</span> valueN:</span><br><span class="line">    <span class="comment">// 当 expression 的结果与 valueN 匹配时，执行此处语句</span></span><br><span class="line">        [<span class="keyword">break</span>;]</span><br><span class="line">    [<span class="keyword">default</span>:</span><br><span class="line">    <span class="comment">// 如果 expression 与上面的 value 值都不匹配时，执行此处语句</span></span><br><span class="line">        [<span class="keyword">break</span>;]]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环语句</p>
+<ol>
+<li>for循环</li>
+<li>for in 循环 - 用来遍历对象</li>
+<li>while 循环</li>
+<li>跳出循环-continue和break</li>
+</ol>
+<p><strong>continue 是立刻跳出当前的这个循环，继续进行下一次循环。</strong><br><strong>break 是立刻跳出这个整个循环，及循环结束。</strong></p>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数的声明"><a href="#函数的声明" class="headerlink" title="函数的声明"></a>函数的声明</h3><p>函数的声明有一下几种方式：</p>
+<ol>
+<li>直接命名的方式来声明：用function fnName(a){}</li>
+<li>利用函数表达式的方式来声明： var abc = function (a){};</li>
+</ol>
+<p>对于函数的命名有一下要求：获取信息的函数使用get开头例如，getAttribute();设置属性的函数使用set开头例如，setAttribute();判断的函数使用is开头，例如isElement();</p>
+<p>这两种声明的区别主要在与函数的预解析问题，利用函数表示的方式，可以避免函数的预解析。</p>
+<p>匿名函数：可以利用它来防止函数名冲突而导致的函数覆盖问，匿名函数在dom事件上，用于事件处理函数，同时匿名函数也经常用作回调函数，都是因为他具有防止函数冲突的优点。</p>
+<p>函数的自调用：这个就是利用匿名函数来实现自调用，他的格式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;());</span><br></pre></td></tr></table></figure>
+<p>这种方式可以称之为沙箱模式，结合作用域的原理，可以有效避免全局变量的污染，沙箱模式，相对于外部是一个封闭的区域，不会影响外部的环境同时也可以解决全局变量的内存泄漏问题。</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域：就是变量的使用范围-分为局部变量作用域和全局变量作用域。</p>
+<p>作用域链：就是变量的使用是从里向外层层的搜索，搜索到了就直接使用，一直搜索到全局的作用域上。</p>
+<p>利用作用域链的原理和函数嵌套的关系，就可以形成闭包的效果。</p>
+<p>闭包的模式：函数箱套关系，在一个函数内部调用另一个函数，只有内部的函数才能调用外部函数的内部变量，这就形成了一个闭包，简单理解就是，将一个函数包裹在另一个函数内。</p>
+<p>闭包的作用：缓存数据延长作用域链-理解为可以利用闭包来实现，函数外面访问函数内部的变量。</p>
+<p>闭包的缺点：会导致内存泄漏。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        flag ++;</span><br><span class="line">        <span class="built_in">console</span>.log(flag);</span><br><span class="line">    &#125;</span><br><span class="line">    inner();</span><br><span class="line">    <span class="keyword">return</span> inner;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上边的例子就是一个简单的闭包的应用，在外部利用一个变量接受outer函数返回的内部函数时，flag这内部变量就独立的和内部函数一起放到内存中，每次执行内部的函数时，这flag就一直累加。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inner = outer(); <span class="comment">// 输出2</span></span><br><span class="line">inner(); <span class="comment">// 输出的是3</span></span><br><span class="line"><span class="keyword">var</span> inner1 = outer(); <span class="comment">// 输出2</span></span><br><span class="line">inner(); <span class="comment">//输出的是4</span></span><br><span class="line">inner1(); <span class="comment">//输出的是3</span></span><br></pre></td></tr></table></figure>
+<h3 id="预解析的问题"><a href="#预解析的问题" class="headerlink" title="预解析的问题"></a>预解析的问题</h3><p>预解析：提前解析代码，分为两个预解析一个是变量的声明，另一个是函数的声明。</p>
+<p>变量声明的预解析：会将变量声明进行提前，但是赋值不会提前</p>
+<p><strong>注意：预解析只是将变量声明和函数声明提前，但是它只是提前到当前作用域的最上面，不会超出当前作用域。</strong></p>
+<p>跨越<code>&lt;script&gt;&lt;/script&gt;</code>的函数声明和变量声明不能进行预解析</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    f2() <span class="comment">// 报错</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(c) <span class="comment">//报错</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'ni hao'</span>);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> c = <span class="number">100</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 现在测试一下,函数声明预解析了的冲突问题,下面两个函数名都为f3的函数，在提前调用f3函数是，调用的那一个？</span></span><br><span class="line"><span class="comment"> 最后的结果为aaa..这个说最后一个函数生效了，这表明重名函数还是存在冲突的问题。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">f3(); <span class="comment">// 输出的结果为’aaaaa'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'wwwwww'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f3);</span><br><span class="line">f3(); <span class="comment">//输出结果为'aaaaaa'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'aaaaaaa'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f3);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">测试一下函数表达式的预解析问题，事实证明函数表达式的预解析，就是变量的预解析，</span></span><br><span class="line"><span class="comment">只是解析了变量的声明，变量没有完成函数体的赋值，随意调用这个函数时报错。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">console</span>.log(f5); <span class="comment">// undefined,变量声明预解析</span></span><br><span class="line"><span class="comment">// f5(); //报错，说这个函数没有定义，这个表明这个函数表达式没有预解析。</span></span><br><span class="line"><span class="keyword">var</span> f5 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'vvvvvvv'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f5(); <span class="comment">//成功输出信息</span></span><br><span class="line"><span class="comment">// 看一下函数表达式和函数声明的预解析冲突问题</span></span><br><span class="line"><span class="built_in">console</span>.log(f6); <span class="comment">// 输出f6这个函数声明，而没有输出undefined。</span></span><br><span class="line">f6(); <span class="comment">// 这个肯定输出888888，因为，函数表达式的会报错</span></span><br><span class="line"><span class="keyword">var</span> f6 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">6666666</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f6); <span class="comment">// 输出f6这个变量赋值的匿名函数，把这个就想想成变量的声明就对了</span></span><br><span class="line">f6(); <span class="comment">// 输出6666666 f6函数表达式执行</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f6</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">888888</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f6); <span class="comment">// 注意： 这个输出的结果为6666那个函数表达式</span></span><br><span class="line">f6(); <span class="comment">// 注意：这个结果为666666，也就是说6666那个函数表达式执行了，而8888那个函数声明没有执行</span></span><br><span class="line"><span class="comment">// 复杂的预解析</span></span><br><span class="line">fun(); <span class="comment">// 全部正确的输出了结果</span></span><br><span class="line"><span class="comment">// console.log(z); // 报错，因为没有变量的声明</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 正确的说出了10 因为是瘾式的全局变量</span></span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 正确的说出了10 因为是瘾式的全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> z = b = c = <span class="number">10</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(z);</span><br><span class="line">    <span class="built_in">console</span>.log(b);</span><br><span class="line">    <span class="built_in">console</span>.log(c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 高级的预解析问题</span></span><br><span class="line"><span class="comment">// 我们的预解释也不会受到function里面的return影响</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'我们是全局的fn'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(fn);</span><br><span class="line">    fn = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">'我是fn2里面的'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>JavaScript 严格意义上讲它不是面向对象的语言，它是基于对象的语言，可以模拟面向对象的思想。</p>
+<p>在JavaScript 中一切皆是对象。</p>
+<p>创建对象的三种方式：</p>
+<ol>
+<li>字面量的方式创建对象</li>
+<li>系统的构造函数的方式创建对象</li>
+<li>自定义构造函数的方式创建对象</li>
+</ol>
+<ul>
+<li>字面量的方式创建对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.name = <span class="string">'小明'</span>;</span><br><span class="line">obj.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: "小明", getName: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>系统的创建对象的构造函数就是<code>new Object()</code>;</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">'小明'</span>;</span><br><span class="line">obj.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: "小明", getName: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>自定义构造函数的方式创建对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Person就是自定义的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Person(<span class="string">'小明'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: "小明"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>利用函数的方式创建对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPersonObject</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在利用自定的构造函数穿件对象时，一定要使用<code>new</code>关键字来声明实例对象，这是因为，这个<code>new</code>关键字做了一下4件事（和上面createPersonObject函数一样）：</p>
+<ol>
+<li>创建一个空对象，并将this绑定为这个空对象</li>
+<li>让该对象继承构造函数的原型</li>
+<li>执行构造函数</li>
+<li>返回这个this对象</li>
+</ol>
+<p>构造函数实例化对象时做的4件事：</p>
+<ol>
+<li>申请一块空闲的内存空间</li>
+<li>将this设置为当前的对象</li>
+<li>设置对象的属性和方法</li>
+<li>把this这个对象返回</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"> 学习</a>
+          
+            <a href="/tags/感悟/" rel="tag"> 感悟</a>
+          
+            <a href="/tags/总结/" rel="tag"> 总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/27/The-second-CSS-learning-record/" rel="next" title="Web前端CSS的学习总结(二)">
+                <i class="fa fa-chevron-left"></i> Web前端CSS的学习总结(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="Feridy" />
+            
+              <p class="site-author-name" itemprop="name">Feridy</p>
+              <p class="site-description motion-element" itemprop="description">Feridy's Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/feridy" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xliu16@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#认识JavaScript-JavaScript是什么"><span class="nav-number">1.</span> <span class="nav-text">认识JavaScript-JavaScript是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript具有的特点"><span class="nav-number">1.1.</span> <span class="nav-text">JavaScript具有的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript的组成部分"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript的组成部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript中的数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">JavaScript中的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置的六种基本数据类型"><span class="nav-number">1.3.1.</span> <span class="nav-text">内置的六种基本数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript判断语句和循环语句"><span class="nav-number">1.4.</span> <span class="nav-text">JavaScript判断语句和循环语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.5.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的声明"><span class="nav-number">1.5.1.</span> <span class="nav-text">函数的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.5.2.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预解析的问题"><span class="nav-number">1.5.3.</span> <span class="nav-text">预解析的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.6.</span> <span class="nav-text">对象</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feridy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
